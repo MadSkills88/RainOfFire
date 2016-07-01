@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Rain of Fire</title>
+        <link href="css/index.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="js/jquery-1.11.3.min.js"></script>
+    </head>
+
+    <body onLoad="initialize();
+        audio0.play();
+        animated();">
+
+
+        <div id="header">
+            <i id="toggleMusic" class="fa fa-music fa-2x"></i>
+            <h1 id="title">Rain of Fire</h1>
+            <button id="startbutton" onClick="start();">Start</button>
+        </div>
+
+        <div id="loadingpage">
+            <img id="meteor" src="images/secondmeteor.png" alt="">
+            <img id="meteor2" src="images/secondmeteor.png" alt="">
+            <img id="meteor3" src="images/secondmeteor.png" alt="">
+        </div>
+
+        <canvas id="canvas"></canvas>
+        <div id="gameoverpage">
+            <button id="restartbutton" onClick="window.location.reload();"><i class="fa fa-refresh fa-3x"></i></button>
+        </div>
+        <div id="score"></div>
+
+        <script src="threejs/three.min.js"></script>
+        <script src="threejs/projector.js"></script>
+        <script src="threejs/canvasrenderer.js"></script>
+        <script src="threejs/bird.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/birds.js"></script>
+        <script src="js/game.js"></script>
+        <script>
+                $('#toggleMusic').click(function () {
+                    $('#toggleMusic').toggleClass('dimify');
+                    playmusic0 = !playmusic0;
+                    if (playmusic0) {
+                        audio0.play();
+                    }
+                    else {
+                        audio0.pause();
+                    }
+                });
+        </script>
+    </body>
+
+</html>
